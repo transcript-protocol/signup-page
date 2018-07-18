@@ -70,6 +70,7 @@ input:-moz-placeholder {
     color: #b5b5b5;
 }
 
+
 #signup .inputs input[type="accountType"],
 input[type=email],
 input[type=password],
@@ -79,6 +80,7 @@ input[type=Last],
 input[type=DOB],
 input[type=School],
 input[type=confirmPassword] {
+
     background: #f5f5f5;
     font-size: 0.8rem;
     -moz-border-radius: 3px;
