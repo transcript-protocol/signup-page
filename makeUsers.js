@@ -5,8 +5,6 @@ Property of EmblemEDU
 Takes elements from form and creates a user object to be passed to the back end
 */
 
-
-
 class User {
     constructor(username, password, accountType) {
         this.username = username
