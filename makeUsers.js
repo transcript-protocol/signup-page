@@ -24,12 +24,26 @@ class Counselor {
     }
 }
 
+class Student {
+    constructor(username, firstName, middleName, lastName, userDOB, userSchool) {
+        this.username = username;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.userDOB = userDOB;
+        this.userSchool = userSchool;
+    }
+}
+
 function createUser(username, password, accountType) {
     return new User(username, password, accountType)
 }
 
 function createCounselor(username, firstName, middleName, lastName, userDOB, userSchool) {
     return new Counselor(username, firstName, middleName, lastName, userDOB, userSchool)
+}
+function createStudent(username, firstName, middleName, lastName, userDOB, userSchool) {
+    return new Student(username, firstName, middleName, lastName, userDOB, userSchool)
 }
 
 // Scrapes data from form and makes a user
@@ -58,7 +72,26 @@ function scrapeCounselor() {
     return counselor
 }
 
+function scrapeStudent() {
+    var username = document.getElementById("email").value
+    var firstName = document.getElementById("firstName").value
+    var middleName = document.getElementById("middleName").value
+    var lastName = document.getElementById("lastName").value
+    var userDOB = document.getElementById("DOB").value
+    var userSchool = document.getElementById("School").value
+
+    var student = createStudent(username, firstName, middleName, lastName, userDOB, userSchool)
+    console.log(student)
+    return student
+}
+
 function scrapeAll() {
+    var accountType = document.getElementById('accountType').value
     scrapeUser()
-    scrapeCounselor()
+    if (accountType == 'guidance'){
+        scrapeCounselor()
+    } else if (accountType == 'student'){
+        scrapeStudent()
+    }
+       
 }
