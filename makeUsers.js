@@ -1,6 +1,6 @@
 /*
-Written by Maria Galebach
-7/17/18
+Written by Maria Galebach && Anna Cuddeback (but mostly Maria)
+7/17/18, updated 
 Property of EmblemEDU
 Takes elements from form and creates a user object to be passed to the back end
 */
@@ -41,12 +41,12 @@ function getRadioValue() {
     if(document.getElementById('typeStudent').checked){
         return 'student';
     }
-    else if (document.getElementById('typeCounsellor').checked){
+    else if (document.getElementById('typeCounselor').checked){
+
         return 'guidance';
     }
 
 }
-
 
 function createUser(username, password, accountType) {
     return new User(username, password, accountType)
@@ -54,6 +54,9 @@ function createUser(username, password, accountType) {
 
 function createCounsellor(username, firstName, middleName, lastName, userDOB, userSchool) {
     return new Counsellor(username, firstName, middleName, lastName, userDOB, userSchool)
+}
+function createStudent(username, firstName, middleName, lastName, userDOB, userSchool) {
+    return new Student(username, firstName, middleName, lastName, userDOB, userSchool)
 }
 function createStudent(username, firstName, middleName, lastName, userDOB, userSchool) {
     return new Student(username, firstName, middleName, lastName, userDOB, userSchool)
@@ -103,7 +106,8 @@ function scrapeStudent() {
 
 
 function scrapeAll() {
-    var accountType = document.getElementById('accountType').value
+
+    var accountType = getRadioValue()
     scrapeUser()
     if (accountType == 'guidance'){
         scrapeCounselor()
