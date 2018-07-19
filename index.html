@@ -21,7 +21,9 @@
 
             <div class="inputs">
 
-                <input type="accountType" id="accountType" placeholder="Account Type" required />
+                <input type="radio" id="typeStudent" name="accountType" value="student" checked>Student 
+                <input type="radio" id="typeCounsellor" name="accountType" value="guidance">Counsellor <br> <br> 
+                            <!-- makes space between choices and rest of the form^^^^^^ -->
 
                 <input type="First" id="firstName" placeholder="First Name" autofocus required/>
 
@@ -37,7 +39,7 @@
 
                 <input type="password" id="password" placeholder="Password" required/>
 
-                <input type="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required/>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required/>
 
                 <div class="checkboxy">
                     <input name="cecky" name="checky" value="1" type="checkbox" required/><label class="terms">I accept the terms of use</label>

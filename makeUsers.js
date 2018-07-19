@@ -13,7 +13,7 @@ class User {
     }
 }
 
-class Counselor {
+class Counsellor {
     constructor(username, firstName, middleName, lastName, userDOB, userSchool) {
         this.username = username;
         this.firstName = firstName;
@@ -35,12 +35,28 @@ class Student {
     }
 }
 
+
+function getRadioValue() {
+
+    if(document.getElementById('typeStudent').checked){
+        return 'student';
+    }
+    else if (document.getElementById('typeCounsellor').checked){
+        return 'guidance';
+    }
+
+}
+
+
 function createUser(username, password, accountType) {
     return new User(username, password, accountType)
 }
 
-function createCounselor(username, firstName, middleName, lastName, userDOB, userSchool) {
-    return new Counselor(username, firstName, middleName, lastName, userDOB, userSchool)
+function createCounsellor(username, firstName, middleName, lastName, userDOB, userSchool) {
+    return new Counsellor(username, firstName, middleName, lastName, userDOB, userSchool)
+}
+function createStudent(username, firstName, middleName, lastName, userDOB, userSchool) {
+    return new Student(username, firstName, middleName, lastName, userDOB, userSchool)
 }
 function createStudent(username, firstName, middleName, lastName, userDOB, userSchool) {
     return new Student(username, firstName, middleName, lastName, userDOB, userSchool)
@@ -50,7 +66,7 @@ function createStudent(username, firstName, middleName, lastName, userDOB, userS
 function scrapeUser() {
     var username = document.getElementById("email").value
     var password = document.getElementById("password").value
-    var accountType = document.getElementById("accountType").value
+    var accountType = getRadioValue()
 
     var user = createUser(username, password, accountType)
     console.log(user)
@@ -58,8 +74,8 @@ function scrapeUser() {
 
 }
 
-// Scrapes data from form and makes a guidance counselor
-function scrapeCounselor() {
+// Scrapes data from form and makes a guidance counsellor
+function scrapeCounsellor() {
     var username = document.getElementById("email").value
     var firstName = document.getElementById("firstName").value
     var middleName = document.getElementById("middleName").value
@@ -67,9 +83,9 @@ function scrapeCounselor() {
     var userDOB = document.getElementById("DOB").value
     var userSchool = document.getElementById("School").value
 
-    var counselor = createCounselor(username, firstName, middleName, lastName, userDOB, userSchool)
-    console.log(counselor)
-    return counselor
+    var counsellor = createCounsellor(username, firstName, middleName, lastName, userDOB, userSchool)
+    console.log(counsellor)
+    return counsellor
 }
 
 function scrapeStudent() {
@@ -84,6 +100,7 @@ function scrapeStudent() {
     console.log(student)
     return student
 }
+
 
 function scrapeAll() {
     var accountType = document.getElementById('accountType').value
