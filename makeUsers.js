@@ -35,6 +35,7 @@ class Student {
     }
 }
 
+
 function getRadioValue() {
 
     if(document.getElementById('typeStudent').checked){
@@ -46,12 +47,16 @@ function getRadioValue() {
 
 }
 
+
 function createUser(username, password, accountType) {
     return new User(username, password, accountType)
 }
 
 function createCounsellor(username, firstName, middleName, lastName, userDOB, userSchool) {
     return new Counsellor(username, firstName, middleName, lastName, userDOB, userSchool)
+}
+function createStudent(username, firstName, middleName, lastName, userDOB, userSchool) {
+    return new Student(username, firstName, middleName, lastName, userDOB, userSchool)
 }
 function createStudent(username, firstName, middleName, lastName, userDOB, userSchool) {
     return new Student(username, firstName, middleName, lastName, userDOB, userSchool)
@@ -98,10 +103,10 @@ function scrapeStudent() {
 
 
 function scrapeAll() {
-    var accountType = getRadioValue()
+    var accountType = document.getElementById('accountType').value
     scrapeUser()
     if (accountType == 'guidance'){
-        scrapeCounsellor()
+        scrapeCounselor()
     } else if (accountType == 'student'){
         scrapeStudent()
     }
