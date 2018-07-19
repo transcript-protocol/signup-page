@@ -1,6 +1,6 @@
 /*
-Written by Maria Galebach
-7/17/18
+Written by Maria Galebach && Anna Cuddeback (but mostly Maria)
+7/17/18, updated 
 Property of EmblemEDU
 Takes elements from form and creates a user object to be passed to the back end
 */
@@ -13,7 +13,7 @@ class User {
     }
 }
 
-class Counsellor {
+class Counselor {
     constructor(username, firstName, middleName, lastName, userDOB, userSchool) {
         this.username = username;
         this.firstName = firstName;
@@ -40,7 +40,7 @@ function getRadioValue() {
     if(document.getElementById('typeStudent').checked){
         return 'student';
     }
-    else if (document.getElementById('typeCounsellor').checked){
+    else if (document.getElementById('typeCounselor').checked){
         return 'guidance';
     }
 
@@ -50,8 +50,8 @@ function createUser(username, password, accountType) {
     return new User(username, password, accountType)
 }
 
-function createCounsellor(username, firstName, middleName, lastName, userDOB, userSchool) {
-    return new Counsellor(username, firstName, middleName, lastName, userDOB, userSchool)
+function createCounselor(username, firstName, middleName, lastName, userDOB, userSchool) {
+    return new Counselor(username, firstName, middleName, lastName, userDOB, userSchool)
 }
 function createStudent(username, firstName, middleName, lastName, userDOB, userSchool) {
     return new Student(username, firstName, middleName, lastName, userDOB, userSchool)
@@ -69,8 +69,8 @@ function scrapeUser() {
 
 }
 
-// Scrapes data from form and makes a guidance counsellor
-function scrapeCounsellor() {
+// Scrapes data from form and makes a guidance counselor
+function scrapeCounselor() {
     var username = document.getElementById("email").value
     var firstName = document.getElementById("firstName").value
     var middleName = document.getElementById("middleName").value
@@ -78,9 +78,9 @@ function scrapeCounsellor() {
     var userDOB = document.getElementById("DOB").value
     var userSchool = document.getElementById("School").value
 
-    var counsellor = createCounsellor(username, firstName, middleName, lastName, userDOB, userSchool)
-    console.log(counsellor)
-    return counsellor
+    var counselor = createCounselor(username, firstName, middleName, lastName, userDOB, userSchool)
+    console.log(counselor)
+    return counselor
 }
 
 function scrapeStudent() {
@@ -101,7 +101,7 @@ function scrapeAll() {
     var accountType = getRadioValue()
     scrapeUser()
     if (accountType == 'guidance'){
-        scrapeCounsellor()
+        scrapeCounselor()
     } else if (accountType == 'student'){
         scrapeStudent()
     }
