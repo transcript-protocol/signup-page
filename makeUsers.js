@@ -58,12 +58,6 @@ function createCounsellor(username, firstName, middleName, lastName, userDOB, us
 function createStudent(username, firstName, middleName, lastName, userDOB, userSchool) {
     return new Student(username, firstName, middleName, lastName, userDOB, userSchool)
 }
-function createStudent(username, firstName, middleName, lastName, userDOB, userSchool) {
-    return new Student(username, firstName, middleName, lastName, userDOB, userSchool)
-}
-function createStudent(username, firstName, middleName, lastName, userDOB, userSchool) {
-    return new Student(username, firstName, middleName, lastName, userDOB, userSchool)
-}
 
 // Scrapes data from form and makes a user
 function scrapeUser() {
