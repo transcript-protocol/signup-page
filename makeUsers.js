@@ -35,7 +35,6 @@ class Student {
     }
 }
 
-
 function getRadioValue() {
 
     if(document.getElementById('typeStudent').checked){
@@ -57,6 +56,7 @@ function createCounselor(username, firstName, middleName, lastName, userDOB, use
 }
 function createStudent(username, firstName, middleName, lastName, userDOB, userSchool) {
     return new Student(username, firstName, middleName, lastName, userDOB, userSchool)
+
 }
 
 // Scrapes data from form and makes a user
@@ -100,7 +100,6 @@ function scrapeStudent() {
 
 
 function scrapeAll() {
-
     var accountType = getRadioValue()
     scrapeUser()
     if (accountType == 'guidance'){
