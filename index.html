@@ -21,21 +21,34 @@
 
             <div class="inputs">
 
-                <input type="First" id="firstName" placeholder="First Name" autofocus />
+                <input type="radio" id="typeStudent" name="accountType" value="student" checked>Student 
+                <input type="radio" id="typeCounselor" name="accountType" value="guidance">Counselor <br> <br> 
 
-                <input type="Middle" id="middleInitial" placeholder="Middle Initial" />
+                            <!-- makes space between choices and rest of the form^^^^^^ -->
 
-                <input type="Last" id="lastName" placeholder="Last Name" />
+                <input type="First" id="firstName" placeholder="First Name" autofocus required/>
 
-                <input type="email" id="email" placeholder="e-mail" autofocus />
+                <input type="Middle" id="middleName" placeholder="Middle Name" />
 
-                <input type="password" id="password" placeholder="Password" />
+                <input type="Last" id="lastName" placeholder="Last Name" required/>
+
+                <input type="DOB" id="DOB" placeholder="Date of Birth DD/MM/YEAR" autofocus required/>
+
+                <input type="School" id="School" placeholder="School" required/>
+
+                <input type="email" id="email" placeholder="E-mail" autofocus required/>
+
+                <input type="password" id="password" placeholder="Password" required/>
+
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" required/>
 
                 <div class="checkboxy">
-                    <input name="cecky" id="checky" value="1" type="checkbox" /><label class="terms">I accept the terms of use</label>
+                    <input name="cecky" name="checky" value="1" type="checkbox" required/><label class="terms">I accept the terms of use</label>
                 </div>
 
-                <a id="submit" href="#">SIGN UP NOW</a>
+                <button id="submit" onclick="scrapeAll();" href="#">SIGN UP NOW</button>
+
+                <script src="makeUsers.js"></script>
 
             </div>
 
