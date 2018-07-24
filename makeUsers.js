@@ -58,6 +58,7 @@ function createStudent(username, firstName, middleName, lastName, userDOB, userS
     return new Student(username, firstName, middleName, lastName, userDOB, userSchool)
 
 }
+
 // Scrapes data from form and makes a user
 function scrapeUser() {
     var username = document.getElementById("email").value
